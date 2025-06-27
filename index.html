@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinyas Malagaudanavar - Backend Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: #0d1117;
+            color: #58a6ff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .terminal-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .terminal-header {
+            background: #21262d;
+            border-radius: 8px 8px 0 0;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid #30363d;
+        }
+        
+        .terminal-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .terminal-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .close { background: #ff5f56; }
+        .minimize { background: #ffbd2e; }
+        .maximize { background: #27ca3f; }
+        
+        .terminal-title {
+            margin-left: 20px;
+            font-size: 14px;
+            color: #8b949e;
+        }
+        
+        .terminal-body {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 20px;
+            min-height: 80vh;
+        }
+        
+        .prompt {
+            color: #7c3aed;
+            font-weight: 500;
+        }
+        
+        .command {
+            color: #58a6ff;
+            margin-left: 10px;
+        }
+        
+        .output {
+            margin: 10px 0 20px 0;
+            color: #e6edf3;
+        }
+        
+        .section {
+            margin: 30px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.6s ease forwards;
+        }
+        
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.8s; }
+        .section:nth-child(5) { animation-delay: 1.0s; }
+        .section:nth-child(6) { animation-delay: 1.2s; }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .typing {
+            border-right: 2px solid #58a6ff;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: #58a6ff; }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        .highlight {
+            color: #f79000;
+            font-weight: 500;
+        }
+        
+        .success {
+            color: #3fb950;
+        }
+        
+        .info {
+            color: #58a6ff;
+        }
+        
+        .warning {
+            color: #f85149;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background: #21262d;
+            color: #58a6ff;
+            padding: 4px 8px;
+            margin: 2px;
+            border-radius: 4px;
+            font-size: 12px;
+            border: 1px solid #30363d;
+        }
+        
+        .job-title {
+            color: #f79000;
+            font-weight: 500;
+        }
+        
+        .company {
+            color: #3fb950;
+        }
+        
+        .duration {
+            color: #8b949e;
+        }
+        
+        .contact-link {
+            color: #58a6ff;
+            text-decoration: none;
+            border-bottom: 1px dotted #58a6ff;
+        }
+        
+        .contact-link:hover {
+            color: #79c0ff;
+            border-bottom-color: #79c0ff;
+        }
+        
+        .ascii-art {
+            color: #3fb950;
+            font-size: 10px;
+            line-height: 1.2;
+            margin: 20px 0;
+        }
+        
+        .interactive-commands {
+            margin: 30px 0;
+            padding: 15px;
+            background: #161b22;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+        }
+        
+        .cmd-list {
+            color: #8b949e;
+            font-size: 12px;
+        }
+        
+        .cmd-item {
+            margin: 5px 0;
+        }
+        
+        .cmd-name {
+            color: #58a6ff;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .terminal-container {
+                padding: 10px;
+            }
+            
+            .terminal-body {
+                padding: 15px;
+            }
+            
+            .ascii-art {
+                font-size: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <div class="terminal-btn close"></div>
+                <div class="terminal-btn minimize"></div>
+                <div class="terminal-btn maximize"></div>
+            </div>
+            <div class="terminal-title">vinyas@backend-engineer: ~/portfolio</div>
+        </div>
+        
+        <div class="terminal-body">
+            <div class="section">
+                <div class="ascii-art">
+██╗   ██╗██╗███╗   ██╗██╗   ██╗ █████╗ ███████╗
+██║   ██║██║████╗  ██║╚██╗ ██╔╝██╔══██╗██╔════╝
+██║   ██║██║██╔██╗ ██║ ╚████╔╝ ███████║███████╗
+╚██╗ ██╔╝██║██║╚██╗██║  ╚██╔╝  ██╔══██║╚════██║
+ ╚████╔╝ ██║██║ ╚████║   ██║   ██║  ██║███████║
+  ╚═══╝  ╚═╝╚═╝  ╚═══╝   ╚═╝   ╚═╝  ╚═╝╚══════╝
+                </div>
+                <div class="prompt">$</div>
+                <span class="command">whoami</span>
+                <div class="output">
+                    <div class="highlight">Vinyas Malagaudanavar</div>
+                    <div class="info">Intermediate Backend Engineer @ Fulfil.io</div>
+                    <div>📍 Bengaluru, India</div>
+                    <div>🚀 An engineer who loves to explore whether it be new software or a gadget</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="prompt">$</div>
+                <span class="command">cat contact.txt</span>
+                <div class="output">
+                    📧 <a href="mailto:vinyasmusic@gmail.com" class="contact-link">vinyasmusic@gmail.com</a><br>
+                    📱 <a href="tel:9779379865" class="contact-link">+91 9779379865</a><br>
+                    📝 <a href="https://gyaani.substack.com" class="contact-link" target="_blank">gyaani.substack.com</a><br>
+                    💼 <a href="https://linkedin.com/in/vinyasm" class="contact-link" target="_blank">linkedin.com/in/vinyasm</a><br>
+                    🐙 <a href="https://github.com/vinyasmusic" class="contact-link" target="_blank">github.com/vinyasmusic</a>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="prompt">$</div>
+                <span class="command">ls -la experience/</span>
+                <div class="output">
+                    <div class="success">total 3 companies</div>
+                    <div style="margin: 15px 0;">
+                        <div class="job-title">Intermediate Backend Engineer</div>
+                        <div class="company">@ Fulfil.io</div>
+                        <div class="duration">Mar 2021 - Present • Bengaluru</div>
+                        <div style="margin: 8px 0; color: #e6edf3;">
+                            • ERP Platform specifically designed for eCommerce and wholesale<br>
+                            • Building features and maintaining backend codebase<br>
+                            • Integration with various 3rd party service providers<br>
+                            • Enabling customers to be better and faster
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <div class="job-title">Sr. Software Engineer</div>
+                        <div class="company">@ DoSelect</div>
+                        <div class="duration">Jan 2019 - Mar 2021 • Bengaluru</div>
+                        <div style="margin: 8px 0; color: #e6edf3;">
+                            • Platform solving hiring/upskilling problems<br>
+                            • Feature development from client feedback to implementation<br>
+                            • Platform stabilization for better performance<br>
+                            • Automation for improved tracking in Jira and Github<br>
+                            • Migrated codebase from Python 2 to 3<br>
+                            • Implemented AI/ML evaluation workflows
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <div class="job-title">Software Engineer</div>
+                        <div class="company">@ Reckonsys Tech Labs</div>
+                        <div class="duration">Jul 2016 - Dec 2018 • Bengaluru</div>
+                        <div style="margin: 8px 0; color: #e6edf3;">
+                            • Full development cycle: analysis to implementation<br>
+                            • Multi-tenant applications and API development<br>
+                            • Angular frontend and mobile integrations<br>
+                            • Fintech, HR and inventory management platforms
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 15px 0;">
+                        <div class="job-title">Operations Engineer</div>
+                        <div class="company">@ Nextdrop</div>
+                        <div class="duration">Sep 2015 - Feb 2016 • Bengaluru</div>
+                        <div style="margin: 8px 0; color: #e6edf3;">
+                            • Data analysis to improve processes and reduce bottlenecks<br>
+                            • Timeline execution coordination with product roadmaps
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="prompt">$</div>
+                <span class="command">cat skills.json | jq</span>
+                <div class="output">
+                    <div class="success">{</div>
+                    <div style="margin-left: 20px;">
+                        <div class="info">"backend": [</div>
+                        <div style="margin-left: 20px;">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Golang</span>
+                            <span class="skill-tag">Trytond</span>
+                        </div>
+                        <div class="info">],</div>
+                        
+                        <div class="info">"cloud_infrastructure": [</div>
+                        <div style="margin-left: 20px;">
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Lambda</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                        <div class="info">],</div>
+                        
+                        <div class="info">"databases_messaging": [</div>
+                        <div style="margin-left: 20px;">
+                            <span class="skill-tag">Redis</span>
+                            <span class="skill-tag">Celery</span>
+                            <span class="skill-tag">RabbitMQ</span>
+                        </div>
+                        <div class="info">],</div>
+                        
+                        <div class="info">"tools_monitoring": [</div>
+                        <div style="margin-left: 20px;">
+                            <span class="skill-tag">Sentry</span>
+                            <span class="skill-tag">Jira</span>
+                            <span class="skill-tag">LabVIEW</span>
+                        </div>
+                        <div class="info">],</div>
+                        
+                        <div class="info">"other": [</div>
+                        <div style="margin-left: 20px;">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">MATLAB</span>
+                        </div>
+                        <div class="info">]</div>
+                    </div>
+                    <div class="success">}</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="prompt">$</div>
+                <span class="command">ls projects/</span>
+                <div class="output">
+                    <div class="highlight">pricealert.trade/</div>
+                    <div style="margin: 8px 0; color: #e6edf3;">
+                        📊 A website that helps keep track of stock prices and alerts users based on their trigger price
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="prompt">$</div>
+                <span class="command">cat education.log</span>
+                <div class="output">
+                    <div class="highlight">M.E. - Electronic Instrumentation and Control</div>
+                    <div class="company">Thapar University (TIET), Patiala</div>
+                    <div class="duration">Jul 2013 - Jul 2015</div>
+                    <br>
+                    <div class="highlight">B.E. - Electrical and Electronics Engineering</div>
+                    <div class="company">Basaveshwar Engineering College, Bagalkot</div>
+                    <div class="duration">Jul 2006 - Jul 2012</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="prompt">$</div>
+                <span class="command">grep -i "achievements" life.txt</span>
+                <div class="output">
+                    🏆 <span class="success">TCS Tech Bytes Winner</span> (Apr 2011)
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="prompt">$</div>
+                <span class="command">echo $INTERESTS</span>
+                <div class="output">
+                    🎵 Music &nbsp;|&nbsp; 🎬 Movies &nbsp;|&nbsp; ⚽ Football &nbsp;|&nbsp; 📚 Reading
+                </div>
+            </div>
+
+            <div class="interactive-commands">
+                <div class="info">Available commands:</div>
+                <div class="cmd-list">
+                    <div class="cmd-item"><span class="cmd-name">help</span> - Show available commands</div>
+                    <div class="cmd-item"><span class="cmd-name">contact</span> - Get in touch</div>
+                    <div class="cmd-item"><span class="cmd-name">skills</span> - View technical skills</div>
+                    <div class="cmd-item"><span class="cmd-name">projects</span> - Explore my work</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="prompt">$</div>
+                <span class="command typing">█</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive terminal effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate typing effect on load
+            const typingElement = document.querySelector('.typing');
+            
+            // Add click handlers for commands
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('contact-link')) {
+                    console.log('Opening contact link...');
+                }
+            });
+            
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.ctrlKey && e.key === 'c') {
+                    e.preventDefault();
+                    console.log('^C');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
