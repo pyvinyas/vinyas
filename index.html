@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinyas Malagaudanavar - Backend Engineer</title>
+    <meta name="description" content="Intermediate Backend Engineer specializing in Python, Django, AWS, and scalable systems. Building the future one API at a time.">
+    <meta property="og:title" content="Vinyas Malagaudanavar - Backend Engineer">
+    <meta property="og:description" content="Intermediate Backend Engineer specializing in Python, Django, AWS, and scalable systems.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTMuMDkgOC4yNkwyMCA5TDEzLjA5IDE1Ljc0TDEyIDIyTDEwLjkxIDE1Ljc0TDQgOUwxMC45MSA4LjI2TDEyIDJaIiBmaWxsPSIjNThhNmZmIi8+Cjwvc3ZnPgo=">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
         
@@ -131,6 +136,27 @@
             color: #f85149;
         }
         
+        .liverpool {
+            color: #d00027;
+            font-weight: 600;
+        }
+        
+        .liverpool-gold {
+            color: #fdf667;
+            font-weight: 500;
+        }
+        
+        .ynwa {
+            color: #d00027;
+            text-shadow: 0 0 10px rgba(208, 0, 39, 0.3);
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { text-shadow: 0 0 10px rgba(208, 0, 39, 0.3); }
+            to { text-shadow: 0 0 20px rgba(208, 0, 39, 0.6); }
+        }
+        
         .skill-tag {
             display: inline-block;
             background: #21262d;
@@ -168,9 +194,12 @@
         
         .ascii-art {
             color: #3fb950;
-            font-size: 10px;
-            line-height: 1.2;
+            font-size: 12px;
+            line-height: 1.1;
             margin: 20px 0;
+            font-weight: 400;
+            white-space: pre;
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
         }
         
         .interactive-commands {
@@ -190,9 +219,24 @@
             margin: 5px 0;
         }
         
-        .cmd-name {
-            color: #58a6ff;
-            font-weight: 500;
+        .company-logo {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px;
+        }
+        
+        .edu-logo {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin-right: 6px;
+            vertical-align: middle;
+            border-radius: 2px;
         }
         
         @media (max-width: 768px) {
@@ -206,6 +250,12 @@
             
             .ascii-art {
                 font-size: 8px;
+                line-height: 1.0;
+            }
+            
+            .company-logo, .edu-logo {
+                width: 16px;
+                height: 16px;
             }
         }
     </style>
@@ -235,9 +285,10 @@
                 <span class="command">whoami</span>
                 <div class="output">
                     <div class="highlight">Vinyas Malagaudanavar</div>
-                    <div class="info">Intermediate Backend Engineer @ Fulfil.io</div>
+                    <div class="info">Staff Software Engineer @ Briq</div>
                     <div>📍 Bengaluru, India</div>
                     <div>🚀 An engineer who loves to explore whether it be new software or a gadget</div>
+                    <div class="lfc-badge">🔴 Liverpool FC Fan - YNWA</div>
                 </div>
             </div>
 
@@ -257,11 +308,30 @@
                 <div class="prompt">$</div>
                 <span class="command">ls -la experience/</span>
                 <div class="output">
-                    <div class="success">total 3 companies</div>
+                    <div class="success">total 4 companies</div>
+                    <div style="margin: 15px 0;">
+                        <div class="job-title">Staff Software Engineer</div>
+                        <div class="company">
+                            <img src="https://briq.com/wp-content/uploads/2023/05/briq-logo-horizontal-color-1.png" alt="Briq" class="company-logo" onerror="this.style.display='none'">
+                            @ Briq
+                        </div>
+                        <div class="duration">Oct 2022 - Present • Remote</div>
+                        <div style="margin: 8px 0; color: #e6edf3;">
+                            • Construction intelligence platform enabling data-driven decisions<br>
+                            • Leading technical architecture and system design decisions<br>
+                            • Mentoring engineering teams and driving best practices<br>
+                            • Building scalable solutions for enterprise construction workflows<br>
+                            • Cross-functional collaboration with product and business teams
+                        </div>
+                    </div>
+                    
                     <div style="margin: 15px 0;">
                         <div class="job-title">Intermediate Backend Engineer</div>
-                        <div class="company">@ Fulfil.io</div>
-                        <div class="duration">Mar 2021 - Present • Bengaluru</div>
+                        <div class="company">
+                            <img src="https://fulfil.io/static/images/logo.svg" alt="Fulfil.io" class="company-logo" onerror="this.style.display='none'">
+                            @ Fulfil.io
+                        </div>
+                        <div class="duration">Mar 2021 - Oct 2022 • Bengaluru</div>
                         <div style="margin: 8px 0; color: #e6edf3;">
                             • ERP Platform specifically designed for eCommerce and wholesale<br>
                             • Building features and maintaining backend codebase<br>
@@ -272,7 +342,10 @@
                     
                     <div style="margin: 15px 0;">
                         <div class="job-title">Sr. Software Engineer</div>
-                        <div class="company">@ DoSelect</div>
+                        <div class="company">
+                            <img src="https://doselect.com/static/doselect/images/logo.svg" alt="DoSelect" class="company-logo" onerror="this.style.display='none'">
+                            @ DoSelect
+                        </div>
                         <div class="duration">Jan 2019 - Mar 2021 • Bengaluru</div>
                         <div style="margin: 8px 0; color: #e6edf3;">
                             • Platform solving hiring/upskilling problems<br>
@@ -286,7 +359,10 @@
                     
                     <div style="margin: 15px 0;">
                         <div class="job-title">Software Engineer</div>
-                        <div class="company">@ Reckonsys Tech Labs</div>
+                        <div class="company">
+                            <img src="https://www.reckonsys.com/assets/images/logo.png" alt="Reckonsys" class="company-logo" onerror="this.style.display='none'">
+                            @ Reckonsys Tech Labs
+                        </div>
                         <div class="duration">Jul 2016 - Dec 2018 • Bengaluru</div>
                         <div style="margin: 8px 0; color: #e6edf3;">
                             • Full development cycle: analysis to implementation<br>
@@ -375,11 +451,17 @@
                 <span class="command">cat education.log</span>
                 <div class="output">
                     <div class="highlight">M.E. - Electronic Instrumentation and Control</div>
-                    <div class="company">Thapar University (TIET), Patiala</div>
+                    <div class="company">
+                        <img src="https://www.thapar.edu/images/thapar-logo.png" alt="Thapar University" class="edu-logo" onerror="this.style.display='none'">
+                        Thapar University (TIET), Patiala
+                    </div>
                     <div class="duration">Jul 2013 - Jul 2015</div>
                     <br>
                     <div class="highlight">B.E. - Electrical and Electronics Engineering</div>
-                    <div class="company">Basaveshwar Engineering College, Bagalkot</div>
+                    <div class="company">
+                        <img src="https://bvbcet.ac.in/images/logo.png" alt="Basaveshwar Engineering College" class="edu-logo" onerror="this.style.display='none'">
+                        Basaveshwar Engineering College, Bagalkot
+                    </div>
                     <div class="duration">Jul 2006 - Jul 2012</div>
                 </div>
             </div>
@@ -396,7 +478,10 @@
                 <div class="prompt">$</div>
                 <span class="command">echo $INTERESTS</span>
                 <div class="output">
-                    🎵 Music &nbsp;|&nbsp; 🎬 Movies &nbsp;|&nbsp; ⚽ Football &nbsp;|&nbsp; 📚 Reading
+                    🎵 Music &nbsp;|&nbsp; 🎬 Movies &nbsp;|&nbsp; <span class="liverpool">⚽ Liverpool FC</span> &nbsp;|&nbsp; 📚 Reading
+                    <div style="margin-top: 10px; font-size: 14px;">
+                        <span class="ynwa">"You'll Never Walk Alone"</span> 🔴
+                    </div>
                 </div>
             </div>
 
@@ -407,6 +492,7 @@
                     <div class="cmd-item"><span class="cmd-name">contact</span> - Get in touch</div>
                     <div class="cmd-item"><span class="cmd-name">skills</span> - View technical skills</div>
                     <div class="cmd-item"><span class="cmd-name">projects</span> - Explore my work</div>
+                    <div class="cmd-item"><span class="cmd-name liverpool">ynwa</span> - <span class="liverpool-gold">You'll Never Walk Alone</span></div>
                 </div>
             </div>
 
