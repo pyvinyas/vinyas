@@ -1,0 +1,79 @@
+VINYAS MALAGAUDANAVAR
+Staff Software Engineer
+=====================================
+
+CONTACT INFORMATION
+📧 vinyasmusic@gmail.com
+📱 +91 9779379865
+💼 linkedin.com/in/vinyasm
+🐙 github.com/vinyasmusic
+📝 gyaani.substack.com
+
+EXPERIENCE
+=====================================
+
+Staff Software Engineer @ Briq
+Oct 2022 - Present
+• Intelligence platform enabling data-driven decisions for construction companies
+• Implemented cost-efficient and performant data extraction pipeline
+• Built a decision-making engine that increased user productivity by 40%
+• Designed and implemented a generic document processing pipeline with inter-document matching
+• Led migration of critical sub-product to subdomain for faster development cycles
+• Enhanced user workflows with AI-driven pre-populated data
+• Improved API performance by 5x and reduced latency significantly
+• Reduced cloud costs by 30% through smarter resource utilization
+• Mentoring engineering teams and driving technical best practices
+• Cross-functional collaboration with product and business stakeholders
+
+Intermediate Backend Engineer @ Fulfil.io
+Mar 2021 - Oct 2022
+• ERP platform specifically designed for eCommerce and wholesale businesses
+• Built scalable features and maintained high-performance backend systems
+• Integrated multiple third-party service providers for enhanced functionality
+• Optimized system performance, enabling customers to operate faster and more efficiently
+
+Sr. Software Engineer @ DoSelect
+Jan 2019 - Mar 2021
+• Platform solving hiring and upskilling challenges for tech teams
+• End-to-end feature development from client feedback to production deployment
+• Stabilized platform architecture for better performance and user experience
+• Implemented automation for improved tracking in Jira and GitHub workflows
+• Successfully migrated entire codebase from Python 2 to Python 3
+• Built efficient evaluation workflows for AI/ML assessment problems
+
+Software Engineer @ Reckonsys Tech Labs
+Jul 2016 - Dec 2018
+• Full software development lifecycle: from analysis to production deployment
+• Built multi-tenant applications and RESTful APIs
+• Developed solutions for Fintech, HR, and inventory management domains
+
+Operations Engineer @ Nextdrop
+Sep 2015 - Feb 2016
+• Analyzed operational data to identify and eliminate process bottlenecks
+• Coordinated project timelines across product roadmaps, logistics, and finance teams
+
+TECHNICAL SKILLS
+=====================================
+Backend Frameworks: Python, Django, Flask, FastAPI, Celery, Golang, Trytond
+Cloud Infrastructure: AWS, GCP, Lambda, Docker, Linux
+Databases & Messaging: PostgreSQL, MongoDB, Redis, RabbitMQ
+Monitoring Tools: Sentry, Elasticsearch, Prometheus, Grafana, Jira
+Other Technologies: HTML/CSS, JavaScript, C/C++, MATLAB, LabVIEW
+
+PROJECTS
+=====================================
+💰 pricealert.trade - Real-time stock price tracking and alert system
+🎮 Khelo5050 - India's first fundraising gaming platform for NGOs
+🏢 nlba.in - Corporate website for Company Secretary firm
+
+EDUCATION
+=====================================
+M.E. Electronic Instrumentation and Control
+Thapar University (TIET), Patiala (2013-2015)
+
+B.E. Electrical and Electronics Engineering
+Basaveshwar Engineering College, Bagalkot (2006-2012)
+
+ACHIEVEMENTS
+=====================================
+🏆 TCS Tech Bytes Winner (Apr 2011) 
