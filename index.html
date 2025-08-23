@@ -24,6 +24,7 @@
             --accent-orange: #f79000;
             --accent-red: #f85149;
             --accent-purple: #7c3aed;
+            --github-logo-filter: invert(1);
         }
         
         [data-theme="light"] {
@@ -38,6 +39,7 @@
             --accent-orange: #bc4c00;
             --accent-red: #cf222e;
             --accent-purple: #8250df;
+            --github-logo-filter: none;
         }
         
         * {
@@ -356,23 +358,29 @@
         }
         
         .company-logo {
-            width: 24px;
-            height: 24px;
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3px;
+            object-fit: contain;
+            max-width: 32px;
+            max-height: 32px;
+        }
+        
+        .edu-logo {
+            width: 28px;
+            height: 28px;
             display: inline-block;
             margin-right: 8px;
             vertical-align: middle;
             border-radius: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2px;
-        }
-        
-        .edu-logo {
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-            margin-right: 6px;
-            vertical-align: middle;
-            border-radius: 2px;
+            object-fit: contain;
+            max-width: 28px;
+            max-height: 28px;
         }
         
         .years-exp {
@@ -413,6 +421,15 @@
             border-radius: 0 4px 4px 0;
         }
         
+        .project-highlight .highlight {
+            color: var(--accent-orange);
+            font-weight: 500;
+        }
+        
+        .project-highlight div {
+            color: var(--text-primary) !important;
+        }
+        
         .achievement-badge {
             display: inline-flex;
             align-items: center;
@@ -439,9 +456,16 @@
                 line-height: 1.0;
             }
             
-            .company-logo, .edu-logo {
-                width: 16px;
-                height: 16px;
+            .company-logo {
+                width: 24px;
+                height: 24px;
+                margin-right: 8px;
+            }
+            
+            .edu-logo {
+                width: 20px;
+                height: 20px;
+                margin-right: 6px;
             }
             
             .quick-stats {
@@ -464,7 +488,7 @@
             </div>
             <div class="terminal-header-right">
                 <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
-                <a href="Vinyas_Malagaudanavar_Resume.txt" class="download-btn" download>📄 Download CV</a>
+                <a href="VinyasResume.pdf" class="download-btn" download>📄 Download CV</a>
             </div>
         </div>
         
@@ -497,7 +521,7 @@
                     
                     📝 <a href="https://gyaani.substack.com" class="contact-link" target="_blank" rel="noopener">gyaani.substack.com</a><br>
                     💼 <a href="https://linkedin.com/in/vinyasm" class="contact-link" target="_blank" rel="noopener">linkedin.com/in/vinyasm</a><br>
-                    🐙 <a href="https://github.com/vinyasmusic" class="contact-link" target="_blank" rel="noopener">github.com/vinyasmusic</a>
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px; filter: var(--github-logo-filter);"> <a href="https://github.com/pyvinyas" class="contact-link" target="_blank" rel="noopener">github.com/pyvinyas</a>
                 </div>
             </div>
 
@@ -505,7 +529,7 @@
                 <div class="prompt">$</div>
                 <span class="command">ls -la experience/</span>
                 <div class="output">
-                    <div class="success">Total 5 companies</div>
+                    
                     <div style="margin: 15px 0;">
                         <div class="job-title">Staff Software Engineer</div>
                         <div class="company">
@@ -652,7 +676,7 @@
                 <div class="output">
                     <div class="project-highlight">
                         <div class="highlight">💰 pricealert.trade</div>
-                        <div style="margin: 8px 0; color: #e6edf3;">
+                        <div style="margin: 8px 0; color: var(--text-primary);">
                             Real-time stock price tracking and alert system. Monitors market movements and notifies users when stocks hit target prices.
                         </div>
                     </div>
@@ -666,13 +690,13 @@
                 <div class="output">
                     <div class="project-highlight">
                         <div class="highlight">🏢 nlba.in</div>
-                        <div style="margin: 8px 0; color: #e6edf3;">
+                        <div style="margin: 8px 0; color: var(--text-primary);">
                             Corporate website for one of India's oldest and most experienced Company Secretary firms. Professional web presence with modern design.
                         </div>
                     </div>
                     <div class="project-highlight">
                         <div class="highlight">🎮 Khelo5050</div>
-                        <div style="margin: 8px 0; color: #e6edf3;">
+                        <div style="margin: 8px 0; color: var(--text-primary);">
                             India's first fundraising gaming platform. Gamified approach to raising funds for NGOs - making fundraising fun and engaging.
                         </div>
                     </div>
@@ -688,14 +712,14 @@
                         <img src="https://d3sr7cc30ek8f4.cloudfront.net/images/size:200x200/extend:b/type:crop/prod/5c63e09a5acc7b00171da121/images.jpeg" alt="Thapar University" class="edu-logo" onerror="this.style.display='none'">
                         Thapar University (TIET), Patiala
                     </div>
-                    <div class="duration">Jul 2013 - Jul 2015</div>
+                    <div class="duration">Jul 2015</div>
                     <br>
                     <div class="highlight">🎓 B.E. - Electrical and Electronics Engineering</div>
                     <div class="company">
                         <img src="https://www.becbgk.edu/img/core-img/BEC_logo_New.jpg" alt="Basaveshwar Engineering College" class="edu-logo" onerror="this.style.display='none'">
                         Basaveshwar Engineering College, Bagalkot
                     </div>
-                    <div class="duration">Jul 2006 - Jul 2012</div>
+                    <div class="duration">Jul 2012</div>
                 </div>
             </div>
 
@@ -725,7 +749,7 @@
                     <div class="cmd-item" onclick="executeCommand('skills')"><span class="cmd-name">skills --advanced</span> - View technical expertise</div>
                     <div class="cmd-item" onclick="executeCommand('projects')"><span class="cmd-name">projects --showcase</span> - Explore my work</div>
                     <div class="cmd-item" onclick="executeCommand('experience')"><span class="cmd-name">experience --detailed</span> - Deep dive into career</div>
-                    <div class="cmd-item" onclick="executeCommand('ynwa')"><span class="cmd-name liverpool">ynwa</span> - <span class="liverpool-gold">You'll Never Walk Alone</span></div>
+                    <div class="cmd-item" onclick="executeCommand('ynwa')"><span class="cmd-name liverpool">ynwa</span> - <span class="liverpool-red">What's YNWA ?</span></div>
                 </div>
                 
                 <!-- Command output area -->
